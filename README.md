@@ -48,5 +48,15 @@ python extract_homam_images.py "..\videos\electric_spark.mp4"
 * Now we have to start labeling these images for use.
 
 <code>
+conda install pyqt=5
+conda install -c anaconda lxml
+pyrcc5 -o resources.py resources.qrc
+
+sudo apt-get install pyqt5-dev-tools
+
+git clone https://github.com/tzutalin/labelImg
+
 pip install pyqt5 lxml --upgrade
+
+cd labelImg && pyrcc5 -o libs/resources.py resources.qrc
 </code>

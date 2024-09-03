@@ -46,7 +46,7 @@ while(True):
         currentframe += 1
               
         if currentframe % 50 == 0: 
-          name = './data/' + prefix + '_frame' + str(currentframe) + '.jpg'      
+          name = './data/images/' + prefix + '_frame' + str(currentframe) + '.jpg'      
           print("Writing frame : " + str(currentframe))  
           cv2.imwrite(name, frame)   
     else: 
