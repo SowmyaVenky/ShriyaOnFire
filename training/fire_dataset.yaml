@@ -1,0 +1,8 @@
+path: ../../image_extractions/roboflowdata
+
+train: train/images
+val: valid/images
+test: test/images
+
+nc: 1
+names: ['fire']

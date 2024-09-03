@@ -6,7 +6,7 @@
 conda create --name firedetection python=3.8 
 conda activate firedetection
 
-pip install torch==1.8.1+cu111 torchvision==0.9.1+cu111 torchaudio===0.8.1 -f https://download.pytorch.org/whl/lts/1.8/torch_lts.html
+conda install -c pytorch -c conda-forge pytorch torchvision 
 
 conda install -c conda-forge ultralytics
 
@@ -45,13 +45,9 @@ python extract_homam_images.py "..\videos\electric_spark.mp4"
 
 </code>
 
-* Now we have to start labeling these images for use.
+* Now we have to start labeling these images for use. For some reason this does not work very well within the conda virtual env. The qt5 version conflict for some reason. That is why it is better to oepn a new command prompt and use that to launch the labelImg. 
 
 <code>
-conda install pyqt=5
-conda install -c anaconda lxml
-pyrcc5 -o resources.py resources.qrc
-
 sudo apt-get install pyqt5-dev-tools
 
 git clone https://github.com/tzutalin/labelImg
@@ -59,4 +55,14 @@ git clone https://github.com/tzutalin/labelImg
 pip install pyqt5 lxml --upgrade
 
 cd labelImg && pyrcc5 -o libs/resources.py resources.qrc
+
+python labelimg.py 
 </code>
+
+* After the labelling of the images are done, there are 2 directories created under the data folder. The images folder will contain all our source images. the labels directory will contain a txt file for every image directory and will contain the bounding boxes for the classes we have labelled using the labelImg tool. The co-ordinates of the bounding box will follow the Yolo format since we have picked the format to be yolo based. 
+
+<img src="./imgs/labelImgInAction.png" />
+
+* Now we need to train our model using the labels and images we have created in the system. 
+
+python training.py --img 320 --batch 16 --epochs 5 --data fire_dataset.yml --weights yolov5s.pt --workers 2
