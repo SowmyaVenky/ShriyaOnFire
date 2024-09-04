@@ -2,12 +2,16 @@ import cv2
 from ultralytics import YOLO
 from ultralytics.utils.plotting import Annotator
 
-model = YOLO("C:\\Venky\\Shriya_on_Fire\\ShriyaOnFire\\training\\runs\detect\\train\\weights\\last.pt")
+# model = YOLO("C:\\Venky\\Shriya_on_Fire\\ShriyaOnFire\\training\\runs\detect\\train\\weights\\last.pt")
+model = YOLO("/home/sowmyavenky/ShriyaOnFire/training/runs/detect/train/weights/last.pt")
 
 # cap = cv2.VideoCapture('C:\\Venky\\Shriya_on_Fire\\ShriyaOnFire\\videos\\homam1.mp4')
 # cap = cv2.VideoCapture('C:\\Venky\\Shriya_on_Fire\\ShriyaOnFire\\videos\\homam2.mp4')
 
-cap = cv2.VideoCapture('C:\\Venky\\Shriya_on_Fire\\ShriyaOnFire\\testing_videos\\fire_testing1.mp4')
+# cap = cv2.VideoCapture('C:\\Venky\\Shriya_on_Fire\\ShriyaOnFire\\testing_videos\\fire_testing1.mp4')
+
+cap = cv2.VideoCapture('/home/sowmyavenky/ShriyaOnFire/videos/homam1.mp4')
+
 # cap = cv2.VideoCapture('C:\\Venky\\Shriya_on_Fire\\ShriyaOnFire\\testing_videos\\fire_testing4.mp4')
 # cap = cv2.VideoCapture('C:\\Venky\\Shriya_on_Fire\\ShriyaOnFire\\testing_videos\\fire_testing5.webm')
 # cap = cv2.VideoCapture('C:\\Venky\\Shriya_on_Fire\\ShriyaOnFire\\testing_videos\\fire_testing6.mp4')
