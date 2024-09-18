@@ -8,7 +8,7 @@ model = YOLO("C:/Venky/Shriya_on_Fire/ShriyaOnFire/training/runs/detect/train/we
 model.export(format="ncnn") 
 imgdir = os.path.join('../', 'image_extractions', 'roboflowdata', 'train', 'images', '0e25edb4-5c37-40d8-80fc-cb1e4a64408c_frame1750_jpg.rf.3e67bc85c5fcebcf9daa7c9b4f723fd5.jpg')
 
-# Load the exported TFLite model
+# Load the exported NCNN model
 ncnn_model = YOLO("C:/Venky/Shriya_on_Fire/ShriyaOnFire/training/runs/detect/train/weights/best_ncnn_model/")
 
 # from ndarray

@@ -34,6 +34,9 @@ prefix = str(uuid.uuid4())
 # Read the video from specified path 
 cam = cv2.VideoCapture(video_name) 
 
+cam.set(3, 640)
+cam.set(4, 480)
+
 while(True): 
       
     # reading from frame 
@@ -48,7 +51,9 @@ while(True):
         if currentframe % 50 == 0: 
           name = './data/images/' + prefix + '_frame' + str(currentframe) + '.jpg'      
           print("Writing frame : " + str(currentframe))  
-          cv2.imwrite(name, frame)   
+          retval = cv2.imwrite(name, frame)
+          if retval:
+            print("Image saved...") 
     else: 
         break
   

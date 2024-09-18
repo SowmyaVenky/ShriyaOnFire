@@ -29,8 +29,9 @@ while cap.isOpened():
     if  frame1 is None:
       break
     
+    # frame = frame1
     frame = cv2.resize(frame1, (640, 480)) 
-    # cv2.imshow('YOLO', frame)
+    #cv2.imshow('YOLO', frame)
     
     results = model.predict(source=frame) 
 
