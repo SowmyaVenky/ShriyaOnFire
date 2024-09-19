@@ -1,25 +1,26 @@
 import cv2
 from ultralytics import YOLO
 from ultralytics.utils.plotting import Annotator
+import os
 
-model = YOLO("C:\\Venky\\Shriya_on_Fire\\ShriyaOnFire\\training\\runs\detect\\train\\weights\\last.pt")
-# model = YOLO("/home/sowmyavenky/ShriyaOnFire/training/runs/detect/train/weights/last.pt")
+#ROOT_PATH = '/home/sowmyavenky/ShriyaOnFire/training/runs/detect/train/weights/'
+#VIDEO_PATH = '/home/sowmyavenky/ShriyaOnFire/testing_videos/'
 
-# cap = cv2.VideoCapture('C:\\Venky\\Shriya_on_Fire\\ShriyaOnFire\\videos\\homam1.mp4')
-# cap = cv2.VideoCapture('C:\\Venky\\Shriya_on_Fire\\ShriyaOnFire\\videos\\homam2.mp4')
+ROOT_PATH = 'C:/Venky/Shriya_on_Fire/ShriyaOnFire/training/runs/detect/train2/weights/'
+TEST_VIDEO_PATH = 'C:/Venky/Shriya_on_Fire/ShriyaOnFire/testing_videos/'
+VIDEO_PATH = 'C:/Venky/Shriya_on_Fire/ShriyaOnFire/videos/'
 
-cap = cv2.VideoCapture('C:\\Venky\\Shriya_on_Fire\\ShriyaOnFire\\testing_videos\\fire_testing1.mp4')
-# cap = cv2.VideoCapture('C:\\Venky\\Shriya_on_Fire\\ShriyaOnFire\\testing_videos\\fire_testing2.mp4')
-# cap = cv2.VideoCapture('C:\\Venky\\Shriya_on_Fire\\ShriyaOnFire\\testing_videos\\fire_testing3.mp4')
+BEST_PT = os.path.join(ROOT_PATH, 'best.pt')
 
-# cap = cv2.VideoCapture('/home/sowmyavenky/ShriyaOnFire/videos/homam1.mp4')
+# ORIG_VIDEO = os.path.join(VIDEO_PATH, 'gas_2.mp4')
+# TEST_VIDEO = os.path.join(TEST_VIDEO_PATH, 'pump_stove_demo.mp4')
+TEST_VIDEO = os.path.join(TEST_VIDEO_PATH, 'pump_stove_demo1.mp4')
 
-# cap = cv2.VideoCapture('C:\\Venky\\Shriya_on_Fire\\ShriyaOnFire\\testing_videos\\fire_testing4.mp4')
-# cap = cv2.VideoCapture('C:\\Venky\\Shriya_on_Fire\\ShriyaOnFire\\testing_videos\\fire_testing5.webm')
-# cap = cv2.VideoCapture('C:\\Venky\\Shriya_on_Fire\\ShriyaOnFire\\testing_videos\\fire_testing6.mp4')
-# cap = cv2.VideoCapture('C:\\Venky\\Shriya_on_Fire\\ShriyaOnFire\\testing_videos\\fire_testing7.mp4')
-# cap = cv2.VideoCapture('C:\\Venky\\Shriya_on_Fire\\ShriyaOnFire\\testing_videos\\fire_testing8.mp4')
-# cap = cv2.VideoCapture('C:\\Venky\\Shriya_on_Fire\\ShriyaOnFire\\testing_videos\\fire_testing9.mp4')
+
+# Load the YOLOv8 model
+model = YOLO(BEST_PT)
+print("Opening " + TEST_VIDEO)
+cap = cv2.VideoCapture(TEST_VIDEO)
 
 cap.set(3, 640)
 cap.set(4, 480)
