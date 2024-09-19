@@ -1,0 +1,8 @@
+path: ShriyaOnFire/image_extractions/roboflowdata
+
+train: train/images
+val: valid/images
+test: test/images
+
+nc: 3
+names: ['fire', 'other', 'smoke']
