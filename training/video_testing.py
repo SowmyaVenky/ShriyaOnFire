@@ -12,9 +12,9 @@ VIDEO_PATH = 'C:/Venky/Shriya_on_Fire/ShriyaOnFire/videos/'
 
 BEST_PT = os.path.join(ROOT_PATH, 'best.pt')
 
-# ORIG_VIDEO = os.path.join(VIDEO_PATH, 'gas_2.mp4')
+TEST_VIDEO = os.path.join(VIDEO_PATH, 'gas_2.mp4')
 # TEST_VIDEO = os.path.join(TEST_VIDEO_PATH, 'pump_stove_demo.mp4')
-TEST_VIDEO = os.path.join(TEST_VIDEO_PATH, 'pump_stove_demo1.mp4')
+# TEST_VIDEO = os.path.join(TEST_VIDEO_PATH, 'pump_stove_demo1.mp4')
 
 
 # Load the YOLOv8 model

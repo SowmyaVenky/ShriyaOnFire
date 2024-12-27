@@ -66,3 +66,6 @@ python labelimg.py
 * Now we need to train our model using the labels and images we have created in the system. 
 
 python training.py --img 320 --batch 16 --epochs 5 --data fire_dataset.yml --weights yolov5s.pt --workers 2
+
+mallikajan2000@gmail.com
+mdobi16jan2000
